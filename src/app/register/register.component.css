@@ -1,0 +1,221 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero_area {
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+/* En-tête */
+.header_section {
+  background-color: #282828;
+  padding: 15px 0;
+}
+
+.navbar-brand span {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #ffffff;
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item .nav-link:hover {
+  color: #FF5733;
+}
+
+/* Section de contact */
+.contact_section {
+  padding: 50px 0;
+}
+
+.img-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 600px;  /* Augmenter la taille de l'image */
+}
+
+/* Formulaire */
+.form_container {
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading_container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form_container input[type="text"],
+.form_container input[type="email"],
+.form_container .message-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form_container button {
+  background-color: #FF5733;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form_container button:hover {
+  background-color: #E64A19;
+}
+
+/* Pied de page */
+.footer_section {
+  background-color: #282828;
+  padding: 15px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.footer_section a {
+  color: #FF5733;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  text-decoration: underline;
+}
+
+.btn-secondary {
+  background-color: #FF5733;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #E64A19;
+}
+
+.btn-primary {
+  background-color: #FF5733;
+  border-color: #FF5733;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #E64A19;
+  border-color: #E64A19;
+}
+
+.btn-danger {
+  background-color: #FF5733;
+  border-color: #FF5733;
+  color: white;
+  margin-left: 10px;
+}
+
+.btn-danger:hover {
+  background-color: #E64A19;
+  border-color: #E64A19;
+}
+
+/* Modifier l'image et le formulaire */
+@media (min-width: 992px) {
+  .contact_section .row {
+    display: flex;
+    align-items: center; /* Aligne verticalement l'image et le formulaire */
+    gap: 30px; /* Ajout d'un écart entre l'image et le formulaire */
+  }
+
+  /* Image */
+  .img-box {
+    flex: 2; /* L'image prend 2/3 de l'espace */
+    order: 1; /* Place l'image à gauche */
+  }
+
+  /* Formulaire */
+  .form_container {
+    flex: 1; /* Le formulaire prend 1/3 de l'espace */
+    padding-left: 20px; /* Espace entre le formulaire et l'image */
+    order: 2; /* Place le formulaire à droite */
+    margin-left: 100px; /* Ajoute de l'espace à gauche du formulaire */
+  }
+
+  /* Centrer l'image */
+  .img-box img {
+    width: 100%;  /* L'image prend toute la largeur disponible */
+    height: auto;
+    object-fit: cover; /* Assurez-vous que l'image couvre bien la zone */
+    max-height: 500px;  /* Augmenter la taille de l'image */
+  }
+}
+
+/* Style pour le champ de téléchargement d'image */
+input[type="file"] {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Style pour l'aperçu de l'image */
+.preview-image {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* Centrer la table */
+.container {
+  display: flex;
+  justify-content: center; /* Centre la table horizontalement */
+  align-items: center; /* Centre la table verticalement si nécessaire */
+  flex-direction: column;
+  margin-top: 30px; /* Optionnel : espace au-dessus de la table */
+}
+
+.table {
+  width: 80%; /* Vous pouvez ajuster cette largeur selon vos besoins */
+  max-width: 900px; /* Limiter la largeur maximale pour des écrans très larges */
+  margin-top: 20px; /* Ajoute un peu d'espace entre la table et le formulaire */
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table img.preview-image {
+  max-width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+

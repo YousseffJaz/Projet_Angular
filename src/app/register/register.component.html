@@ -1,0 +1,94 @@
+<section class="contact_section">
+  <!-- Section principale pour le formulaire de contact -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Colonne pour l'image -->
+      <div class="col-md-6 px-0">
+        <div class="img-box">
+          <!-- Affichage de l'image de contact -->
+          <img src="https://www.entrenamiento.com/wp-content/uploads/2020/01/mejores-maquinas-cardio.jpg" alt="Image de Contact">
+        </div>
+      </div>
+      <!-- Colonne pour le formulaire de contact -->
+      <div class="col-lg-5 col-md-6">
+        <div class="form_container">
+          <!-- Titre de la section -->
+          <div class="heading_container">
+            <h2>Contact</h2>
+          </div>
+          <!-- Formulaire de contact -->
+          <form (ngSubmit)="onSubmit()">
+            <div>
+              <!-- Champ pour télécharger un fichier -->
+              <input type="file" (change)="onImageSelected($event)" />
+            </div>
+            <div>
+              <!-- Champ pour entrer le nom -->
+              <input type="text" [(ngModel)]="formData.nom" name="nom" placeholder="Nom" required />
+            </div>
+            <div>
+              <!-- Champ pour entrer l'email -->
+              <input type="email" [(ngModel)]="formData.email" name="email" placeholder="Email" required />
+            </div>
+            <div>
+              <!-- Champ pour entrer le numéro de téléphone -->
+              <input type="text" [(ngModel)]="formData.telephone" name="telephone" placeholder="Numéro de téléphone" required />
+            </div>
+            <div>
+              <!-- Champ pour entrer le message -->
+              <textarea [(ngModel)]="formData.message" name="message" class="message-box" placeholder="Message" required></textarea>
+            </div>
+            <div class="d-flex">
+              <!-- Bouton pour soumettre le formulaire (texte variable en fonction de l'édition ou de l'ajout) -->
+              <button type="submit">{{ isEditing ? 'Mettre à jour' : 'Ajouter' }}</button>
+              <!-- Bouton pour réinitialiser le formulaire -->
+              <button type="button" (click)="resetForm()" class="cta-button">Réinitialiser</button>
+              <!-- Bouton pour retourner à la page d'accueil -->
+              <button type="button" class="btn btn-secondary" [routerLink]="'/home'">Page d'accueil</button>
+            </div>
+          </form>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Affichage des contacts enregistrés -->
+  <div class="container">
+    <h3>Liste des Contacts</h3>
+    <!-- Tableau pour afficher les contacts -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <!-- Entêtes des colonnes du tableau -->
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Message</th>
+          <th>Image</th> <!-- Nouvelle colonne pour afficher l'image -->
+          <th>Actions</th> <!-- Colonne pour les actions (modifier, supprimer) -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Boucle sur la liste des contacts pour afficher chaque contact -->
+        <tr *ngFor="let contact of contacts; let i = index">
+          <td>{{ contact.nom }}</td> <!-- Affichage du nom du contact -->
+          <td>{{ contact.email }}</td> <!-- Affichage de l'email du contact -->
+          <td>{{ contact.telephone }}</td> <!-- Affichage du numéro de téléphone du contact -->
+          <td>{{ contact.message }}</td> <!-- Affichage du message du contact -->
+          <td>
+            <!-- Affichage de l'image du contact si disponible -->
+            <div *ngIf="contact.image">
+              <img [src]="contact.image" alt="Image du Contact" class="preview-image" />
+            </div>
+          </td>
+          <td>
+            <!-- Bouton pour modifier le contact -->
+            <button (click)="editContact(i)" class="btn btn-primary btn-sm">Modifier</button>
+            <!-- Bouton pour supprimer le contact -->
+            <button (click)="deleteContact(i)" class="btn btn-danger btn-sm">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

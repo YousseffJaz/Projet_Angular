@@ -1,0 +1,79 @@
+/* Style de base pour le conteneur principal */
+.home-container {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles pour la section de l'en-tête */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Cache toute partie de l'image qui dépasse */
+}
+
+.hero-section img {
+  width: 100%; /* Largeur pleine */
+  height: 400px; /* Hauteur personnalisée, ajustez comme nécessaire */
+  object-fit: cover; /* Assure que l'image couvre toute la section */
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cta-button {
+  background-color: #FF5733; /* Couleur du bouton */
+  color: white; /* Couleur du texte */
+  padding: 10px 20px; /* Espacement interne */
+  border: none; /* Supprime la bordure par défaut */
+  cursor: pointer; /* Change le curseur pour indiquer un clic */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s; /* Animation pour le survol */
+}
+
+.cta-button:hover {
+  background-color: #E64A19; /* Couleur du bouton au survol */
+}
+
+/* Styles pour la section des services */
+.services-section {
+  padding: 20px; /* Espacement autour de la section */
+  text-align: center; /* Centre le texte */
+}
+
+.services-grid {
+  display: flex; /* Utilise flexbox pour l'agencement */
+  gap: 20px; /* Espace entre les cartes de service */
+  justify-content: center; /* Centre les éléments horizontalement */
+  flex-wrap: wrap; /* Permet aux éléments de se déplacer à la ligne */
+}
+
+.service-card {
+  background-color: #f4f4f4; /* Couleur de fond des cartes */
+  padding: 15px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  width: 200px; /* Largeur fixe pour les cartes */
+  text-align: center; /* Centre le texte à l'intérieur des cartes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  transition: transform 0.3s; /* Animation pour l'effet de survol */
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+}
+
+.service-card img {
+  width: 100%; /* Assurez-vous que les images s'ajustent correctement */
+  height: auto; /* Maintient le rapport hauteur/largeur */
+  border-radius: 5px; /* Coins arrondis pour les images */
+}
+
+.events-section, .testimonials-section {
+  padding: 20px; 
+  text-align: center; 
+}
+
